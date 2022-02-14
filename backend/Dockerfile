@@ -4,11 +4,11 @@ FROM golang:1.16-alpine
 
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
-RUN go mod download
+COPY ./backend/go.mod ./
+COPY ./backend/go.sum ./
+RUN ./backend/go mod download
 
-COPY *.go ./
+COPY ./backend/*.go ./
 
 RUN go build -o /docker-gs-ping
 
