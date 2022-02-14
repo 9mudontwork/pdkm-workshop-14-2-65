@@ -6,7 +6,7 @@ steps:
       - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME'
       - .
       - '-f'
-      - Dockerfile
+      - './backend/Dockerfile'
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
